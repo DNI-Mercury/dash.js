@@ -491,6 +491,14 @@ function ProtectionController(config) {
 
         // Determine license server URL
         let url = null;
+        let httpHeaders = null;
+
+        if(protData && protData.httpHeaders) {
+            if(protData.httpHeaders.hasOwnProperty('name') && protData.httpHeaders.hasOwnProperty(value)) {
+                httpHeaders = protData.httpHeaders;
+            }
+        }
+
         if (protData && protData.serverURL) {
             const serverURL = protData.serverURL;
             if (typeof serverURL === 'string' && serverURL !== '') {
@@ -522,6 +530,9 @@ function ProtectionController(config) {
         };
 
         xhr.open(licenseServerData.getHTTPMethod(messageType), url, true);
+        if(httpHeaders) {
+            xhr.setRequestHeader(httpHeaders.name, httpHeaders.value);
+        }
         xhr.responseType = licenseServerData.getResponseType(keySystemString, messageType);
         xhr.onload = function () {
             if (this.status == 200) {
