@@ -493,8 +493,8 @@ function ProtectionController(config) {
         let url = null;
         let httpHeaders = null;
 
-        if(protData && protData.httpHeaders) {
-            if(protData.httpHeaders.hasOwnProperty('name') && protData.httpHeaders.hasOwnProperty('value')) {
+        if (protData && protData.httpHeaders) {
+            if (protData.httpHeaders.hasOwnProperty('name') && protData.httpHeaders.hasOwnProperty('value')) {
                 httpHeaders = protData.httpHeaders;
             }
         }
@@ -530,7 +530,7 @@ function ProtectionController(config) {
         };
 
         xhr.open(licenseServerData.getHTTPMethod(messageType), url, true);
-        if(httpHeaders) {
+        if (httpHeaders) {
             xhr.setRequestHeader(httpHeaders.name, httpHeaders.value);
         }
         xhr.responseType = licenseServerData.getResponseType(keySystemString, messageType);
