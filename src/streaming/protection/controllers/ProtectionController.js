@@ -494,7 +494,7 @@ function ProtectionController(config) {
         let httpHeaders = null;
 
         if(protData && protData.httpHeaders) {
-            if(protData.httpHeaders.hasOwnProperty('name') && protData.httpHeaders.hasOwnProperty(value)) {
+            if(protData.httpHeaders.hasOwnProperty('name') && protData.httpHeaders.hasOwnProperty('value')) {
                 httpHeaders = protData.httpHeaders;
             }
         }
