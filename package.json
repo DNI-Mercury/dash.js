@@ -12,7 +12,14 @@
     "dev": "grunt watch:dev",
     "prepublish": "grunt prepublish",
     "debug": "iron-mocha --require mochahook",
-    "coverage": "istanbul cover node_modules/mocha/bin/_mocha --require mochahook -- test/"
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha --require mochahook -- test/",
+    "bump-major": "./node_modules/npmversion/bin/npmversion --increment major",
+    "bump-minor": "./node_modules/npmversion/bin/npmversion --increment minor",
+    "bump-patch": "./node_modules/npmversion/bin/npmversion --increment patch",
+    "bump-major-alpha": "./node_modules/npmversion/bin/npmversion --increment premajor --preid alpha",
+    "bump-minor-alpha": "./node_modules/npmversion/bin/npmversion --increment preminor --preid alpha",
+    "bump-patch-alpha": "./node_modules/npmversion/bin/npmversion --increment prepatch --preid alpha",
+    "bump-prerelease": "./node_modules/npmversion/bin/npmversion --increment prerelease --preid alpha"
   },
   "devDependencies": {
     "babel": "^5.3.1",
@@ -49,6 +56,7 @@
     "jsdoc": "^3.4.0",
     "load-grunt-tasks": "^3.1.0",
     "mocha": "^2.3.4",
+    "npmversion": "^1.6.2",
     "sinon": "^1.17.2",
     "time-grunt": "^1.2.0",
     "uglify-js": "^2.4.21",
